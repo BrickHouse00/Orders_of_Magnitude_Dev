@@ -1,0 +1,47 @@
+{
+  "item.ordersofmagnitude.matter_reallocator_tablet_basic": "Iron Matter Reallocator Tablet",
+  "item.ordersofmagnitude.matter_reallocator_tablet_gold": "Gold Matter Reallocator Tablet",
+  "item.ordersofmagnitude.matter_reallocator_tablet_redstone": "Redstone Matter Reallocator Tablet",
+  "item.ordersofmagnitude.matter_reallocator_tablet_diamond": "Diamond Matter Reallocator Tablet",
+  "item.ordersofmagnitude.matter_reallocator_weapon": "Matter Reallocator Weapon",
+  "item.ordersofmagnitude.matter_reallocator_device": "Matter Reallocator",
+  "item.ordersofmagnitude.infused_module": "Infused Reallocation Module",
+  "item.ordersofmagnitude.empty_module": "Empty Reallocation Module",
+  "item.ordersofmagnitude.reallocating_bucket": "Reallocating Bucket",
+  "item.ordersofmagnitude.centrifuge": "Centrifuge Mixer",
+
+  "fluid.ordersofmagnitude.reallocating_fluid": "Reallocating Fluid",
+  "fluid.ordersofmagnitude.reallocating_flowing": "Reallocating Fluid",
+
+  "block.ordersofmagnitude.blue_mushroom": "Blue Mushroom",
+  "block.ordersofmagnitude.blue_mushroom_block": "Blue Mushroom Block",
+  "block.ordersofmagnitude.green_mushroom": "Green Mushroom",
+  "block.ordersofmagnitude.green_mushroom_block": "Green Mushroom Block",
+  "block.ordersofmagnitude.basic_matter_infusion": "Basic Matter Infuser",
+  "block.ordersofmagnitude.upgraded_matter_infusion": "Upgraded Matter Infuser",
+  "block.ordersofmagnitude.advanced_matter_infusion": "Advanced Matter Infuser",
+  "block.ordersofmagnitude.matter_mixer": "Matter Mixer",
+  "block.ordersofmagnitude.potted_blue_mushroom": "Potted Blue Mushroom",
+  "block.ordersofmagnitude.potted_green_mushroom": "Potted Green Mushroom",
+
+  "itemGroup.ordersofmagnitudetab": "Orders of Magnitude",
+
+  "gui.ordersofmagnitude.matter_infusion_menu.tootip.line1": "Use the keypad to input the",
+  "gui.ordersofmagnitude.matter_infusion_menu.tootip.line2": "desired percent size of an",
+  "gui.ordersofmagnitude.matter_infusion_menu.tootip.line3": "Press SHIFT for limits.",
+  "gui.ordersofmagnitude.matter_infusion_menu.tootip.alt.line1": "Minimum Size: ",
+  "gui.ordersofmagnitude.matter_infusion_menu.tootip.alt.line2": "Maximum Size: ",
+  "gui.ordersofmagnitude.matter_infusion_menu.out_of_bounds": "You have input a size this Matter Infuser cannot produce.",
+  "gui.ordersofmagnitude.matter_infusion_menu.label.result": "RESULT",
+  "gui.ordersofmagnitude.matter_infusion_menu.label.input": "INPUT",
+
+  "gui.ordersofmagnitude.matter_reallocator_tablet.no_power": "Your tablet does not have enough power.",
+  "gui.ordersofmagnitude.matter_reallocator_tablet.none": "None",
+
+  "gui.ordersofmagnitude.energy_toolip": "Energy Stored:",
+
+  "gui.ordersofmagnitude.matter_reallocator_weapon.activated.line1": "Infused Module ",
+  "gui.ordersofmagnitude.matter_reallocator_weapon.activated.line2": "% is active.",
+  "gui.ordersofmagnitude.matter_reallocator_weapon.empty.equipped": "No Infused Module Activated.",
+  "gui.ordersofmagnitude.matter_reallocator_weapon.activeslot": "Active"
+}

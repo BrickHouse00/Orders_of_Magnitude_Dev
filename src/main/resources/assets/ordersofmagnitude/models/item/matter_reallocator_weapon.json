@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "ordersofmagnitude:item/matter_reallocator_weapon"
+  }
+}

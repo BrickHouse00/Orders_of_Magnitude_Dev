@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#g#",
+    "#m#",
+    "#b#"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "b": {
+      "item": "minecraft:bucket"
+    },
+    "m": {
+      "item": "ordersofmagnitude:centrifuge"
+    },
+    "g": {
+      "tag": "forge:glass_panes/colorless"
+    }
+  },
+  "result": {
+    "item": "ordersofmagnitude:matter_mixer"
+  }
+}

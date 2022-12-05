@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "ordersofmagnitude:basic_matter_infusion",
+    "ordersofmagnitude:upgraded_matter_infusion",
+    "ordersofmagnitude:advanced_matter_infusion",
+    "ordersofmagnitude:matter_mixer"
+  ]
+}

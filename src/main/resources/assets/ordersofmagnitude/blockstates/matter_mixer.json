@@ -1,0 +1,19 @@
+{
+    "variants": {
+      "facing=north": {
+        "model": "ordersofmagnitude:block/matter_mixer"
+      },
+      "facing=south": {
+        "model": "ordersofmagnitude:block/matter_mixer",
+        "y": 180
+      },
+      "facing=west": {
+        "model": "ordersofmagnitude:block/matter_mixer",
+        "y": 270
+      },
+      "facing=east": {
+        "model": "ordersofmagnitude:block/matter_mixer",
+        "y": 90
+      }
+    }
+}

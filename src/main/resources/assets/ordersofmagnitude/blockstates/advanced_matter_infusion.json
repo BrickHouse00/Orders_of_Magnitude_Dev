@@ -1,0 +1,19 @@
+{
+    "variants": {
+      "facing=north": {
+        "model": "ordersofmagnitude:block/advanced_matter_infusion"
+      },
+      "facing=south": {
+        "model": "ordersofmagnitude:block/advanced_matter_infusion",
+        "y": 180
+      },
+      "facing=west": {
+        "model": "ordersofmagnitude:block/advanced_matter_infusion",
+        "y": 270
+      },
+      "facing=east": {
+        "model": "ordersofmagnitude:block/advanced_matter_infusion",
+        "y": 90
+      }
+    }
+}

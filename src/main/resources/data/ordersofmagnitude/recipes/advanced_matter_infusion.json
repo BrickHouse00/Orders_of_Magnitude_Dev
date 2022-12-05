@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#r#",
+    "c b",
+    "#s#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:shulker_shell"
+    },
+    "b": {
+      "item": "minecraft:stone_button"
+    },
+    "s": {
+      "item": "minecraft:stone_slab"
+    },
+    "r": {
+      "item": "ordersofmagnitude:matter_reallocator_device"
+    },
+    "c": {
+      "tag": "forge:chests/wooden"
+    }
+  },
+  "result": {
+    "item": "ordersofmagnitude:advanced_matter_infusion"
+  }
+}

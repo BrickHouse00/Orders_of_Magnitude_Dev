@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#g#",
+    "brb",
+    "#c#"
+  ],
+  "key": {
+    "#": {
+      "tag": "forge:ingots/iron"
+    },
+    "b": {
+      "item": "minecraft:stone_button"
+    },
+    "c": {
+      "tag": "forge:chests/wooden"
+    },
+    "g": {
+      "tag": "forge:glass_panes/colorless"
+    },
+    "r": {
+      "item": "ordersofmagnitude:matter_reallocator_device"
+    }
+  },
+  "result": {
+    "item": "ordersofmagnitude:matter_reallocator_tablet_basic"
+  }
+}

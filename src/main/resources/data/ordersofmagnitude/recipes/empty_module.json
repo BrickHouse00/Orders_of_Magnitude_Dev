@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "r",
+    "g",
+    "i"
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:iron_bars"
+    },
+    "g": {
+      "tag": "forge:glass_panes/colorless"
+    },
+    "i": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "ordersofmagnitude:empty_module",
+    "count": 2
+  }
+}

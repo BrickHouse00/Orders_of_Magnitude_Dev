@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "package": "net.brickhouse.ordersofmagnitude.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "ordersofmagnitude.refmap.json",
+  "mixins": [
+    "vehicle.MixinAbstractHorse",
+    "MixinEntity",
+    "MixinLivingEntity",
+    "block.MixinSnowLayerBlock",
+    "block.MixinSoulSandBlock",
+    "MixinIForgePlayerMixin",
+    "MixinServerGamePacketListernerImpl",
+    "vehicle.MixinEntity",
+    "vehicle.MixinBoat",
+    "vehicle.MixinLlama"
+  ],
+  "client": [
+    "MixinCamera",
+    "MixinCubeMap",
+    "MixinEntityRendererDispatcher",
+    "MixinGameRenderer",
+    "MixinInventoryScreen",
+    "MixinScreenEffectRenderer",
+    "MixinPlayerRenderer",
+    "MixinEntityRenderer"
+  ],
+  "minVersion": "0.8"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " m ",
+    "mim",
+    " m "
+  ],
+  "key": {
+    "m": {
+      "item": "ordersofmagnitude:empty_module"
+    },
+    "i": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "ordersofmagnitude:centrifuge"
+  }
+}

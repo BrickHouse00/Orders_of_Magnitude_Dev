@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bme",
+    "mme",
+    "lle"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:bucket"
+    },
+    "m": {
+      "item": "ordersofmagnitude:blue_mushroom"
+    },
+    "l": {
+      "tag": "forge:gems/lapis"
+    },
+    "e": {
+      "item": "ordersofmagnitude:green_mushroom"
+    }
+  },
+  "result": {
+    "item": "ordersofmagnitude:reallocating_bucket"
+  }
+}

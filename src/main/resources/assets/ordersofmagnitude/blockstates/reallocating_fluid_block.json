@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ordersofmagnitude:block/reallocating_fluid_block"
+    }
+  }
+}
