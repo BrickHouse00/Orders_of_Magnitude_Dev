@@ -2,6 +2,7 @@ package net.brickhouse.ordersofmagnitude.item.custom;
 
 import net.brickhouse.ordersofmagnitude.client.MatterWeaponMenu;
 import net.brickhouse.ordersofmagnitude.sizechange.SizeChangeCapability;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
@@ -39,13 +40,16 @@ public class MatterReallocatorWeaponItem extends OMStorageItem implements MenuPr
         if(!(pEntity instanceof LivingEntity)){     //block any entity that isn't a living entity, such as boats and minecarts
             return false;
         }
-        double targetScale = pStack.getOrCreateTag().getDouble("targetScale");
-        if(targetScale != 0.0D && pEntity instanceof LivingEntity livingEntity && !pEntity.level.isClientSide){
-            pEntity.getCapability(SizeChangeCapability.INSTANCE).ifPresent(sizeChange ->
-            {
-                sizeChange.ChangeSize(livingEntity, targetScale);
-            });
-            return true;
+        if(canUseSizeChange(pStack, pPlayer, false)) {
+            double targetScale = pStack.getOrCreateTag().getDouble("targetScale");
+            if (targetScale != 0.0D && pEntity instanceof LivingEntity livingEntity && !pEntity.level.isClientSide) {
+                pEntity.getCapability(SizeChangeCapability.INSTANCE).ifPresent(sizeChange ->
+                {
+                    sizeChange.ChangeSize(livingEntity, targetScale);
+                });
+                usePower(pStack);
+                return true;
+            }
         }
         return false;
     }
@@ -62,6 +66,15 @@ public class MatterReallocatorWeaponItem extends OMStorageItem implements MenuPr
         }
 
         return new InteractionResultHolder<>(InteractionResult.PASS, pPlayer.getItemInHand(pHand));
+    }
+
+    @Override
+    public boolean canUseSizeChange(ItemStack pItemStack, LivingEntity livingEntity, boolean simulate){
+        boolean canUse = super.canUseSizeChange(pItemStack, livingEntity, simulate);
+        if(livingEntity instanceof Player player && !simulate && !canUse) {
+            player.displayClientMessage(new TranslatableComponent("gui.ordersofmagnitude.matter_reallocator_weapon.no_power").withStyle(ChatFormatting.RED), false);
+        }
+        return canUse;
     }
 
     private void rotateModules(ItemStack pWeapon, Player pPlayer){

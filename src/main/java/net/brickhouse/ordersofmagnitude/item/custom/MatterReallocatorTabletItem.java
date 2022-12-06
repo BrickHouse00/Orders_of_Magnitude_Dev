@@ -60,8 +60,9 @@ public class MatterReallocatorTabletItem extends OMStorageItem implements MenuPr
     }
 
     //Returns true is the player is set to creative, or if the tablet has enough energy to function
+    @Override
     public boolean canUseSizeChange(ItemStack pItemStack, LivingEntity livingEntity, boolean simulate){
-        if(livingEntity instanceof Player){
+        /*if(livingEntity instanceof Player){
             if(((Player) livingEntity).isCreative()){
                 return true;
             }
@@ -72,25 +73,26 @@ public class MatterReallocatorTabletItem extends OMStorageItem implements MenuPr
             if(iEnergyStorage.getEnergyStored() >= 1000){
                 return true;
             }
-        }
-        if(livingEntity instanceof Player player && !simulate) {
+        }*/
+        boolean canUse = super.canUseSizeChange(pItemStack, livingEntity, simulate);
+        if(livingEntity instanceof Player player && !simulate && !canUse) {
             player.displayClientMessage(new TranslatableComponent("gui.ordersofmagnitude.matter_reallocator_tablet.no_power").withStyle(ChatFormatting.RED), false);
         }
-        return false;
+        return canUse;
     }
-
+/*
     public void usePower(ItemStack pItemStack){
         pItemStack.getCapability(CapabilityEnergy.ENERGY).ifPresent(energyHandler ->{
             energyHandler.extractEnergy(OMServerConfig.ITEM_ENERGY_EXTRACT.get(), false);
         });
     }
-
+*/
     //Misc Functions
     @Override
     public Component getDisplayName() {
         return new TextComponent(this.getOrCreateDescriptionId());
     }
-
+/*
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced){
         //Do I want to add a description with hotkey?  This would be the place to add it
@@ -104,7 +106,7 @@ public class MatterReallocatorTabletItem extends OMStorageItem implements MenuPr
         });
 
     }
-
+*/
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
@@ -117,7 +119,7 @@ public class MatterReallocatorTabletItem extends OMStorageItem implements MenuPr
         //not sure if this is really needed now that ClickInputEvent is being used to detect the client using the tablet
         return true;
     }
-
+/*
     @Override
     public boolean isBarVisible(ItemStack stack){
         IEnergyStorage energyStorage = stack.getCapability(CapabilityEnergy.ENERGY, null).orElse(null);
@@ -132,6 +134,8 @@ public class MatterReallocatorTabletItem extends OMStorageItem implements MenuPr
     public int getBarColor(ItemStack pStack) {
         return Mth.hsvToRgb(Math.max(0.0F, getBarWidth(pStack)/(float)MAX_BAR_WIDTH)/3.0F, 1.0F, 1.0F);
     }
+
+ */
 /*
     @Nullable
     @Override

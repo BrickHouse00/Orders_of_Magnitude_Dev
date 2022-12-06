@@ -43,5 +43,6 @@
   "gui.ordersofmagnitude.matter_reallocator_weapon.activated.line1": "Infused Module ",
   "gui.ordersofmagnitude.matter_reallocator_weapon.activated.line2": "% is active.",
   "gui.ordersofmagnitude.matter_reallocator_weapon.empty.equipped": "No Infused Module Activated.",
-  "gui.ordersofmagnitude.matter_reallocator_weapon.activeslot": "Active"
+  "gui.ordersofmagnitude.matter_reallocator_weapon.activeslot": "Active",
+  "gui.ordersofmagnitude.matter_reallocator_weapon.no_power": "Your reallocator does not have enough power."
 }
