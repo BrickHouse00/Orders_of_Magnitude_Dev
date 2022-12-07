@@ -13,7 +13,8 @@
     "MixinServerGamePacketListernerImpl",
     "vehicle.MixinEntity",
     "vehicle.MixinBoat",
-    "vehicle.MixinLlama"
+    "vehicle.MixinLlama",
+    "MixinBasePressurePlateBlock"
   ],
   "client": [
     "MixinCamera",
