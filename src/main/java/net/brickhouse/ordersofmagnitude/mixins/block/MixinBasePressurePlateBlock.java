@@ -1,4 +1,4 @@
-package net.brickhouse.ordersofmagnitude.mixins;
+package net.brickhouse.ordersofmagnitude.mixins.block;
 
 import net.brickhouse.ordersofmagnitude.sizechange.SizeUtility;
 import net.minecraft.core.BlockPos;

@@ -7,14 +7,14 @@
     "vehicle.MixinAbstractHorse",
     "MixinEntity",
     "MixinLivingEntity",
+    "block.MixinBasePressurePlateBlock",
     "block.MixinSnowLayerBlock",
     "block.MixinSoulSandBlock",
     "MixinIForgePlayerMixin",
     "MixinServerGamePacketListernerImpl",
     "vehicle.MixinEntity",
     "vehicle.MixinBoat",
-    "vehicle.MixinLlama",
-    "MixinBasePressurePlateBlock"
+    "vehicle.MixinLlama"
   ],
   "client": [
     "MixinCamera",
