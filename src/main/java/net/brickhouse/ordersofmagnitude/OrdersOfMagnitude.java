@@ -1,6 +1,7 @@
 package net.brickhouse.ordersofmagnitude;
 
 import com.mojang.logging.LogUtils;
+import net.brickhouse.ordersofmagnitude.advancements.ModCriteriaTriggers;
 import net.brickhouse.ordersofmagnitude.block.ModBlocks;
 import net.brickhouse.ordersofmagnitude.block.blockEntity.ModBlockEntities;
 import net.brickhouse.ordersofmagnitude.client.ModMenuTypes;
@@ -9,6 +10,7 @@ import net.brickhouse.ordersofmagnitude.events.RenderEvents;
 import net.brickhouse.ordersofmagnitude.fluid.ModFluids;
 import net.brickhouse.ordersofmagnitude.item.ModItems;
 import net.brickhouse.ordersofmagnitude.networking.ModMessages;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
@@ -57,6 +59,7 @@ public class OrdersOfMagnitude
         event.enqueueWork(()->{
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.BLUE_MUSHROOM.getId(), ModBlocks.POTTED_BLUE_MUSHROOM);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.GREEN_MUSHROOM.getId(), ModBlocks.POTTED_GREEN_MUSHROOM);
+            CriteriaTriggers.register(ModCriteriaTriggers.CHANGE_SIZE);
         });
         ModMessages.register();
     }
