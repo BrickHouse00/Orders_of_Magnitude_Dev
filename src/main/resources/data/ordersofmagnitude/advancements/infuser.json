@@ -3,8 +3,12 @@
     "icon": {
       "item": "ordersofmagnitude:basic_matter_infusion"
     },
-    "title": "What smells like bacon?",
-    "description": "Craft a Basic Matter Infuser.",
+    "title": {
+      "translate": "advancements.ordersofmagnitude.infuser.title"
+    },
+    "description": {
+      "translate": "advancements.ordersofmagnitude.infuser.description"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true

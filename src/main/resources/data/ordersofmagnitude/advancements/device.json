@@ -3,8 +3,12 @@
     "icon": {
       "item": "ordersofmagnitude:matter_reallocator_device"
     },
-    "title": "Watch the pointy end!",
-    "description": "Craft a Matter Reallating Device.",
+    "title": {
+      "translate": "advancements.ordersofmagnitude.device.title"
+    },
+    "description": {
+      "translate": "advancements.ordersofmagnitude.device.description"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true

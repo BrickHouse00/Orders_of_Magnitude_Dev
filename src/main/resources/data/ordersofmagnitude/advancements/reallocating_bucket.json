@@ -3,8 +3,12 @@
     "icon": {
       "item": "ordersofmagnitude:reallocating_bucket"
     },
-    "title": "Drink me!",
-    "description": "Make a bucket of reallocating fluid.",
+    "title": {
+      "translate": "advancements.ordersofmagnitude.reallocating_bucket.title"
+    },
+    "description": {
+      "translate": "advancements.ordersofmagnitude.reallocating_bucket.description"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true

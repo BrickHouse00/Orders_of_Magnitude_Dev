@@ -3,8 +3,12 @@
     "icon": {
       "item": "ordersofmagnitude:infused_module"
     },
-    "title": "Now You're Cooking",
-    "description": "Infuse a module with the essence of reallocation!",
+    "title": {
+      "translate": "advancements.ordersofmagnitude.infused_module.title"
+    },
+    "description": {
+      "translate": "advancements.ordersofmagnitude.infused_module.description"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true

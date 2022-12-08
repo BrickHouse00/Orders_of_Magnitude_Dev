@@ -3,8 +3,12 @@
     "icon": {
       "item": "ordersofmagnitude:matter_reallocator_tablet_basic"
     },
-    "title": "Size this down!",
-    "description": "Craft a Matter Reallocating Tablet.",
+    "title": {
+      "translate": "advancements.ordersofmagnitude.tablet.title"
+    },
+    "description": {
+      "translate": "advancements.ordersofmagnitude.tablet.description"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true
