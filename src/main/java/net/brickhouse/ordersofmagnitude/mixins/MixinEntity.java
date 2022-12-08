@@ -96,7 +96,7 @@ public abstract class MixinEntity {
     @ModifyVariable(method="move", at = @At("HEAD"))
     public Vec3 onMove(Vec3 pPos){
         Entity entity = (Entity)(Object) this;
-        if(entity instanceof LivingEntity livingEntity) {
+        if(entity instanceof LivingEntity livingEntity && SizeUtility.getScale(entity) != 1.0) {
             double scale = getDeltaMovement(SizeUtility.getScale(livingEntity)); //.getBbHeight()/1.8;
             pPos = pPos.multiply(scale, scale, scale);
         }
@@ -105,8 +105,8 @@ public abstract class MixinEntity {
 
     @ModifyConstant(method="move", constant = @Constant(floatValue = 0.6F, ordinal = 1))
     public float scaleNextStepRequirements(float value, MoverType pType){
-        //MoverType Player is the type excpected of a server player
-        if(pType == MoverType.SELF) {
+        //MoverType Player is the type expected of a server player
+        if(pType == MoverType.SELF && SizeUtility.getScale((Entity)(Object)this) != 1.0) {
             float scaleMod = SizeUtility.getScale((Entity) (Object) this);
             return value / getDeltaMovement(scaleMod);
         }

@@ -4,6 +4,7 @@ import net.brickhouse.ordersofmagnitude.api.SizeChangeCapabilityInterface;
 import net.brickhouse.ordersofmagnitude.config.OMServerConfig;
 import net.brickhouse.ordersofmagnitude.networking.ModMessages;
 import net.brickhouse.ordersofmagnitude.networking.packet.ClientboundChangeSizePacket;
+import net.brickhouse.ordersofmagnitude.networking.packet.ServerboundChangeSizePacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.LivingEntity;
@@ -82,19 +83,23 @@ public class SizeChangeCapabilityImplementation implements SizeChangeCapabilityI
     @Override
     public void ChangeSize(@NotNull LivingEntity livingEntity, double newTarget) {
         //System.out.print("ChangeSize() targetScale: " + targetScale + " getScale: " + currentScale + "\n");
-        if(newTarget >= OMServerConfig.MINIMUM_SIZE.get() && newTarget <= OMServerConfig.MAXIMUM_SIZE.get()) {
-            if (targetScale != newTarget) {  //entity is wanting to go to a new scale
-                setTargetScale(newTarget);
-                setIsScaled(true);
-                sync(livingEntity);
-                livingEntity.refreshDimensions();  //order of operations.  Sync first, then client refresh.  This will ensure bounding boxes are built correctly
+        if(livingEntity.level.isClientSide){
+            ModMessages.sendToServer(new ServerboundChangeSizePacket(livingEntity.getId(), newTarget));
+        } else {
+            if (newTarget >= OMServerConfig.MINIMUM_SIZE.get() && newTarget <= OMServerConfig.MAXIMUM_SIZE.get()) {
+                if (targetScale != newTarget) {  //entity is wanting to go to a new scale
+                    setTargetScale(newTarget);
+                    setIsScaled(true);
+                    sync(livingEntity);
+                    livingEntity.refreshDimensions();  //order of operations.  Sync first, then client refresh.  This will ensure bounding boxes are built correctly
 
-            } else {
-                setIsScaled(false);
-                setTargetScale(defaultScale);
-                setCurrentScale(defaultScale);
-                livingEntity.refreshDimensions();
-                sync(livingEntity);
+                } else {
+                    setIsScaled(false);
+                    setTargetScale(defaultScale);
+                    setCurrentScale(defaultScale);
+                    livingEntity.refreshDimensions();
+                    sync(livingEntity);
+                }
             }
         }
     }

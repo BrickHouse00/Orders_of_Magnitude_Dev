@@ -37,6 +37,12 @@ public class SizeChangeCapabilityInterface {
 
         void sync(@Nonnull LivingEntity livingEntity);
 
+        /**
+         * This is the function to call if you want to change the scale of an entity.  Pass it the entity and target scale.  Entities will "descale" to 1.0 if you pass it the same target scale
+         * for example, pass it 0.50D to scale to 0.50D.  If you pass 0.50D again, the entity will return to 1.0D.
+         * If an entity is already scaled, passing it a different scale will transition to that scale
+         * for example, pass it 0.50D to scale to 0.50D initially.  Pass it 0.25D, and the entity will now scale to 0.25D
+         */
         void ChangeSize(@Nonnull LivingEntity livingEntity, double newTarget);
 
         void CopyFrom(SizeChangeCapabilityInterface.SizeChangeCapabilityFunctions OldValue);

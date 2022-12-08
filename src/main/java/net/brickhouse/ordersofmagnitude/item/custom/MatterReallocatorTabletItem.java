@@ -4,6 +4,7 @@ import net.brickhouse.ordersofmagnitude.client.MatterReallocatorTabletMenu;
 import net.brickhouse.ordersofmagnitude.config.OMServerConfig;
 import net.brickhouse.ordersofmagnitude.networking.ModMessages;
 import net.brickhouse.ordersofmagnitude.networking.packet.ServerboundChangeSizePacket;
+import net.brickhouse.ordersofmagnitude.sizechange.SizeChangeCapability;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -54,8 +55,17 @@ public class MatterReallocatorTabletItem extends OMStorageItem implements MenuPr
     //This is called from onClickInputEvent client side event
     public void LeftClickAction(LivingEntity livingEntity)
     {
-        if(canUseSizeChange(livingEntity.getMainHandItem(), livingEntity, false)){
-            ModMessages.sendToServer(new ServerboundChangeSizePacket());
+        ItemStack stack = livingEntity.getMainHandItem();
+        if(canUseSizeChange(stack, livingEntity, false)){
+            //ModMessages.sendToServer(new ServerboundChangeSizePacket());
+            double targetScale = stack.getOrCreateTag().getDouble("targetScale");
+            if (targetScale != 0.0D) {
+                livingEntity.getCapability(SizeChangeCapability.INSTANCE).ifPresent(sizeChange ->
+                {
+                    sizeChange.ChangeSize(livingEntity, targetScale);
+                });
+                usePower(stack);
+            }
         }
     }
 
