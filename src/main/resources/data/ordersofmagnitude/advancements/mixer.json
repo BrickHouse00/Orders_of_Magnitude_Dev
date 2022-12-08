@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "ordersofmagnitude:matter_mixer"
+    },
+    "title": "What's the batter?",
+    "description": "Craft a Matter Mixer.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "ordersofmagnitude:device",
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ordersofmagnitude:matter_mixer"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "ordersofmagnitude:reallocating_bucket"
+    },
+    "title": "Drink me!",
+    "description": "Make a bucket of reallocating fluid.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "ordersofmagnitude:root",
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ordersofmagnitude:reallocating_bucket"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

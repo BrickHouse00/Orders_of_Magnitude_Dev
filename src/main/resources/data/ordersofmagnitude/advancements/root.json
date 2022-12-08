@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "item": "ordersofmagnitude:matter_reallocator_tablet_diamond"
+    },
+    "title": "Orders of Magnitude",
+    "description": "Get big or get smol!",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "green_mushroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ordersofmagnitude:green_mushroom"
+            ]
+          }
+        ]
+      }
+    },
+    "blue_mushroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ordersofmagnitude:blue_mushroom"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "green_mushroom",
+      "blue_mushroom"
+    ]
+  ]
+}
