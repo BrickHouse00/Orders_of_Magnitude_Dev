@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "ordersofmagnitude:basic_matter_infusion"
+    },
+    "title": "What smells like bacon?",
+    "description": "Craft a Basic Matter Infuser.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "ordersofmagnitude:device",
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ordersofmagnitude:basic_matter_infusion"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
