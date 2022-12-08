@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "ordersofmagnitude:infused_module"
+    },
+    "title": "Junior!",
+    "description": "Shrink to 50% scale",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "ordersofmagnitude:tablet",
+  "criteria": {
+    "requirements": {
+      "trigger": "ordersofmagnitude:change_size",
+      "conditions": {
+        "scale": {
+          "min": 0.49,
+          "max": 0.51
+        }
+      }
+    }
+  }
+}

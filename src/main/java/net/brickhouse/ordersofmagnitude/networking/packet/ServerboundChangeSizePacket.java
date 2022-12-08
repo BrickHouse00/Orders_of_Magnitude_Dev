@@ -1,5 +1,6 @@
 package net.brickhouse.ordersofmagnitude.networking.packet;
 
+import net.brickhouse.ordersofmagnitude.advancements.ModCriteriaTriggers;
 import net.brickhouse.ordersofmagnitude.item.custom.MatterReallocatorTabletItem;
 import net.brickhouse.ordersofmagnitude.sizechange.SizeChangeCapability;
 import net.minecraft.network.FriendlyByteBuf;
@@ -47,6 +48,7 @@ public class ServerboundChangeSizePacket {
                             ((MatterReallocatorTabletItem) tablet.getItem()).usePower(tablet);
                         }
                         sizeChange.ChangeSize((ServerPlayer) player, targetScale); //add property for target size once GUI is set up
+                        ModCriteriaTriggers.CHANGE_SIZE.trigger(player, targetScale);
                     }
                 });
 
