@@ -1,4 +1,6 @@
 {
+  "itemGroup.ordersofmagnitudetab": "Orders of Magnitude",
+
   "item.ordersofmagnitude.matter_reallocator_tablet_basic": "Iron Matter Reallocator Tablet",
   "item.ordersofmagnitude.matter_reallocator_tablet_gold": "Gold Matter Reallocator Tablet",
   "item.ordersofmagnitude.matter_reallocator_tablet_redstone": "Redstone Matter Reallocator Tablet",
@@ -23,8 +25,6 @@
   "block.ordersofmagnitude.matter_mixer": "Matter Mixer",
   "block.ordersofmagnitude.potted_blue_mushroom": "Potted Blue Mushroom",
   "block.ordersofmagnitude.potted_green_mushroom": "Potted Green Mushroom",
-
-  "itemGroup.ordersofmagnitudetab": "Orders of Magnitude",
 
   "gui.ordersofmagnitude.matter_infusion_menu.tootip.line1": "Use the keypad to input the",
   "gui.ordersofmagnitude.matter_infusion_menu.tootip.line2": "desired percent size of an",
