@@ -1,46 +1,71 @@
-package net.brickhouse.ordersofmagnitude.client;
+package net.brickhouse.ordersofmagnitude.world.inventory;
 
-import net.brickhouse.ordersofmagnitude.block.ModBlocks;
-import net.brickhouse.ordersofmagnitude.block.blockEntity.MatterMixerBlockEntity;
-import net.brickhouse.ordersofmagnitude.client.gui.elements.InfuserSlot;
+import net.brickhouse.ordersofmagnitude.block.blockEntity.matterinfusion.AbstractMatterInfusionBlockEntity;
+import net.brickhouse.ordersofmagnitude.item.ModItems;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class MatterMixerMenu extends AbstractContainerMenu {
+public class MatterInfusionMenu extends AbstractContainerMenu {
 
-    private final MatterMixerBlockEntity blockEntity;
+    private final AbstractMatterInfusionBlockEntity blockEntity;
     private final ContainerData data;
 
     IItemHandler inv;
+    public double selectedSize;
 
     private final ContainerLevelAccess access;
 
     private FluidStack fluidStack;
 
-    public MatterMixerMenu(int pContainerId, Inventory playerInventory, FriendlyByteBuf extraData) {
+    public int tier;
+
+    public MatterInfusionMenu(int pContainerId, Inventory playerInventory, FriendlyByteBuf extraData) {
         this(pContainerId, playerInventory, playerInventory.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(3), ContainerLevelAccess.NULL);
     }
-    public MatterMixerMenu(int pContainerId, Inventory playerInventory, BlockEntity blockEntity, ContainerData pData, ContainerLevelAccess pAccess) {
-        super(ModMenuTypes.MATTER_MIXER_MENU.get(), pContainerId);
-        checkContainerDataCount(pData, 2);
-        this.blockEntity = (MatterMixerBlockEntity) blockEntity;
+    public MatterInfusionMenu(int pContainerId, Inventory playerInventory, BlockEntity blockEntity, ContainerData pData, ContainerLevelAccess pAccess) {
+        super(ModMenuTypes.MATTER_INFUSION_MENU.get(), pContainerId);
+        checkContainerDataCount(pData, 3);
+        this.blockEntity = (AbstractMatterInfusionBlockEntity) blockEntity;
         this.data = pData;
         this.access = pAccess;
         this.fluidStack = this.blockEntity.getFluidStack();
+        this.tier = this.blockEntity.tier;
 
         addDataSlots(pData);
         addInventoryHotbar(playerInventory);
         addSlots();
 
+    }
+
+    public double getSelectedSize(){
+        //return ((double) this.data.get(2))/10000D;
+        //System.out.println("getSelectedSize clientside: " + this.blockEntity.getLevel().isClientSide() + " buffer scale: " + this.blockEntity.getBufferSelectedScale());//this.blockEntity.getUpdateTag().getDouble("matter_infusion_machine.bufferSelectedScale"));
+        //return this.blockEntity.getUpdateTag().getDouble("matter_infusion_machine.bufferSelectedScale");
+        return this.blockEntity.getBufferSelectedScale();
+    }
+
+    /*public double initializeSelection(){
+        int tempSelection = this.data.get(2);
+        selectedSize = ((double) tempSelection)/10000D;
+        System.out.print("Menu Const data size: " + this.data.getCount() + " selectedScale: " + (tempSelection)/10000D + "\n");
+        return selectedSize;
+    }*/
+
+    //Only call this from the server side.  Workflow for menu is to call a data packet to call this function from enqueue
+    public void updateDesignScale(double designScale){
+        //int tempScale = (int) (designScale*10000D);
+        //this.data.set(2, tempScale);
+        //this.access.execute(Level::blockEntityChanged);
+        this.blockEntity.getTileData().putDouble("matter_infusion_machine.bufferSelectedScale", designScale);
+        //System.out.println("updateDesignScale: " + (this.data.get(2)));
     }
 
     public boolean isCrafting() {
@@ -62,23 +87,22 @@ public class MatterMixerMenu extends AbstractContainerMenu {
 
     public void addSlots(){
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            addSlot(new InfuserSlot(handler, 0, 62, 13, true, 64, ModBlocks.BLUE_MUSHROOM.get().asItem()));     //Top input
-            addSlot(new InfuserSlot(handler, 1, 62, 36, true, 64, Items.LAPIS_LAZULI));                         //middle input
-            addSlot(new InfuserSlot(handler, 2, 62, 59, true, 64, ModBlocks.GREEN_MUSHROOM.get().asItem()));     //Bottom input
-            addSlot(new SlotItemHandler(handler, 3, 143, 17));                      //empty bucket input.  Need to update InfuserSlot() to handle items that are not empty modules
-            addSlot(new InfuserSlot(handler, 4, 143, 54, false, 64, null));                                 //filled Bucket output
+            addSlot(new InfuserSlot(handler, 0, 46, 20, true, 64, ModItems.EMPTY_MODULE.get()));     //empty module input
+            addSlot(new SlotItemHandler(handler, 1, 8, 20));                        //filled bucket input.  Need to update InfuserSlot() to handle items that are not empty modules
+            addSlot(new InfuserSlot(handler, 2, 8, 57, false, 64, null));     //Empty Bucket output
+            addSlot(new InfuserSlot(handler, 3, 100, 20, false, 64, null));    //Result output
         });
     }
 
     private void addInventoryHotbar(Inventory pPlayerInventory){
         for(int i = 0; i < 3; ++i) {
             for(int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(pPlayerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                this.addSlot(new Slot(pPlayerInventory, j + i * 9 + 9, 8 + j * 18, 110 + i * 18));
             }
         }
 
         for(int k = 0; k < 9; ++k) {
-            this.addSlot(new Slot(pPlayerInventory, k, 8 + k * 18, 142));
+            this.addSlot(new Slot(pPlayerInventory, k, 8 + k * 18, 168));
         }
     }
 
@@ -140,7 +164,7 @@ public class MatterMixerMenu extends AbstractContainerMenu {
     public FluidStack getFluidStack() {
         return this.blockEntity.getFluidStack();
     }
-    public MatterMixerBlockEntity getBlockEntity() {
+    public AbstractMatterInfusionBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 }

@@ -1,7 +1,7 @@
 package net.brickhouse.ordersofmagnitude.block.blockEntity.matterinfusion;
 
 import net.brickhouse.ordersofmagnitude.block.blockEntity.OMBlockEntity;
-import net.brickhouse.ordersofmagnitude.client.MatterInfusionMenu;
+import net.brickhouse.ordersofmagnitude.world.inventory.MatterInfusionMenu;
 import net.brickhouse.ordersofmagnitude.config.OMServerConfig;
 import net.brickhouse.ordersofmagnitude.item.ModItems;
 import net.brickhouse.ordersofmagnitude.networking.ModMessages;

@@ -1,73 +1,48 @@
-package net.brickhouse.ordersofmagnitude.client;
+package net.brickhouse.ordersofmagnitude.world.inventory;
 
-import net.brickhouse.ordersofmagnitude.client.gui.elements.TabletSlot;
-import net.brickhouse.ordersofmagnitude.item.custom.MatterReallocatorTabletItem;
-import net.minecraft.client.Minecraft;
-import net.minecraft.network.FriendlyByteBuf;
+import net.brickhouse.ordersofmagnitude.item.custom.OMStorageItem;
+import net.brickhouse.ordersofmagnitude.utility.OMInventoryHandlerWrapper;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
+import org.jetbrains.annotations.Nullable;
 
-public class MatterReallocatorTabletMenu extends OMAbstractContainerMenu{//AbstractContainerMenu{
-    //private final Level level;
-    public final ItemStack tabletItemStack;
-    private int numSlots;
-    //public final MatterReallocatorTabletItem tabletItem;
+public abstract class OMAbstractContainerMenu extends AbstractContainerMenu {
 
-    //public IItemHandler inv;
+    public IItemHandler itemInventory;
+    public int NUM_SLOTS;
+    public int invXOffset;
+    public int invYOffset;
 
-    public MatterReallocatorTabletMenu(int pContainerId, Inventory playerInventory, FriendlyByteBuf extraData) {
-        //this(pContainerId, inv, Minecraft.getInstance().player.getMainHandItem());
-        this(pContainerId, playerInventory, playerInventory.player.getMainHandItem());
+    protected OMAbstractContainerMenu(@Nullable MenuType<?> pMenuType, int pContainerId, Inventory pPlayerInventory, ItemStack pItemStack, int pInvXOffset, int pInvYOffset) {
+        super(pMenuType, pContainerId);
+        itemInventory = pItemStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).orElse(null);
+        TE_INVENTORY_SLOT_COUNT = ((OMStorageItem)pItemStack.getItem()).NUM_SLOTS;
+        NUM_SLOTS = TE_INVENTORY_SLOT_COUNT;
+        invXOffset = pInvXOffset;
+        invYOffset = pInvYOffset;
+        addPlayerInventory(pPlayerInventory);
     }
 
-    public MatterReallocatorTabletMenu(int pContainerId, Inventory playerInventory, ItemStack tabletItemStack){
-        super(ModMenuTypes.MATTER_REALLOCATOR_TABLET_MENU.get(), pContainerId, playerInventory, tabletItemStack, 0, 26);
-        this.tabletItemStack = tabletItemStack;
-        //this.tabletItem = (MatterReallocatorTabletItem) tabletItemStack.getItem();
-
-        //this.level = playerInventory.player.level;
-        //numSlots = tabletItem.NUM_SLOTS;
-        //TE_INVENTORY_SLOT_COUNT = tabletItem.NUM_SLOTS;
-        //inv = tabletItemStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).orElse(null);
-        addSlots();
-        //addPlayerInventory(playerInventory);
-        //addPlayerHotbar(playerInventory);
-    }
-    public void addSlots(){
-        //IItemHandler inv = tabletItemStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).orElse(null);
-
-            //System.out.print("GetSlots(): " + inv.getSlots() + "\n");
-            int slotCounter = 0;
-            for (int j = 0; j < 2; j++) {
-                for (int i = 0; i < NUM_SLOTS / 2; i++) {
-                    addSlot(new TabletSlot(itemInventory, slotCounter, 70 + j * 80, i * 22 - 16));
-
-                    slotCounter++;
-                }
-            }
-    }
-/*
     @Override
     public boolean stillValid(Player pPlayer) {
         return true;
     }
+
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 140-30 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, (8+invXOffset) + l * 18, (84+invYOffset) + i * 18));
             }
         }
-    }
-
-    private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 198-30));
+            this.addSlot(new Slot(playerInventory, i, (8+invXOffset) + i * 18, 142+invYOffset));
         }
     }
 
@@ -121,7 +96,4 @@ public class MatterReallocatorTabletMenu extends OMAbstractContainerMenu{//Abstr
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
     }
-
- */
-
 }

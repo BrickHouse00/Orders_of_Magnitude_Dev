@@ -1,4 +1,4 @@
-package net.brickhouse.ordersofmagnitude.client;
+package net.brickhouse.ordersofmagnitude.world.inventory;
 
 import net.brickhouse.ordersofmagnitude.OrdersOfMagnitude;
 import net.brickhouse.ordersofmagnitude.client.gui.MatterInfusionScreen;

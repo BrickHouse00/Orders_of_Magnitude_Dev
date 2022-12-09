@@ -3,7 +3,7 @@ package net.brickhouse.ordersofmagnitude.client.gui;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.brickhouse.ordersofmagnitude.OrdersOfMagnitude;
-import net.brickhouse.ordersofmagnitude.client.MatterMixerMenu;
+import net.brickhouse.ordersofmagnitude.world.inventory.MatterMixerMenu;
 import net.brickhouse.ordersofmagnitude.client.gui.elements.EnergyInfoArea;
 import net.brickhouse.ordersofmagnitude.client.gui.elements.FluidTankRenderer;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
