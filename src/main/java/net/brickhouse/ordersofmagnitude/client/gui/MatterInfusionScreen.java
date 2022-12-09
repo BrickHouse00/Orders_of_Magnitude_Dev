@@ -4,7 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.brickhouse.ordersofmagnitude.OrdersOfMagnitude;
-import net.brickhouse.ordersofmagnitude.world.inventory.MatterInfusionMenu;
+import net.brickhouse.ordersofmagnitude.client.MatterInfusionMenu;
 import net.brickhouse.ordersofmagnitude.client.gui.elements.*;
 import net.brickhouse.ordersofmagnitude.config.OMServerConfig;
 import net.brickhouse.ordersofmagnitude.networking.ModMessages;

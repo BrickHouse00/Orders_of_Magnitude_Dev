@@ -1,4 +1,4 @@
-package net.brickhouse.ordersofmagnitude.mixins.client;
+package net.brickhouse.ordersofmagnitude.mixins;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.brickhouse.ordersofmagnitude.sizechange.SizeUtility;

@@ -1,9 +1,16 @@
-package net.brickhouse.ordersofmagnitude.world.inventory;
+package net.brickhouse.ordersofmagnitude.client;
 
+import net.brickhouse.ordersofmagnitude.client.gui.elements.TabletSlot;
+import net.brickhouse.ordersofmagnitude.item.custom.MatterReallocatorWeaponItem;
+import net.brickhouse.ordersofmagnitude.item.custom.OMStorageItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 
 public class MatterWeaponMenu extends OMAbstractContainerMenu {
 

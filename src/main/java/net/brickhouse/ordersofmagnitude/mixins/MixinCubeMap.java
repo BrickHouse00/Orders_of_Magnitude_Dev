@@ -1,4 +1,4 @@
-package net.brickhouse.ordersofmagnitude.mixins.client;
+package net.brickhouse.ordersofmagnitude.mixins;
 
 import net.brickhouse.ordersofmagnitude.sizechange.SizeUtility;
 import net.minecraft.client.Minecraft;

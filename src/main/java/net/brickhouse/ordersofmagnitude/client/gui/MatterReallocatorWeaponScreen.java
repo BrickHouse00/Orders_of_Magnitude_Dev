@@ -3,7 +3,7 @@ package net.brickhouse.ordersofmagnitude.client.gui;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.brickhouse.ordersofmagnitude.OrdersOfMagnitude;
-import net.brickhouse.ordersofmagnitude.world.inventory.MatterWeaponMenu;
+import net.brickhouse.ordersofmagnitude.client.MatterWeaponMenu;
 import net.brickhouse.ordersofmagnitude.networking.ModMessages;
 import net.brickhouse.ordersofmagnitude.networking.packet.ServerboundItemMenuSizeSelectPacket;
 import net.minecraft.client.Minecraft;

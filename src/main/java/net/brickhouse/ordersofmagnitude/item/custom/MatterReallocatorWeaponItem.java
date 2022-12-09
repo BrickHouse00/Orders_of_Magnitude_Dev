@@ -1,6 +1,6 @@
 package net.brickhouse.ordersofmagnitude.item.custom;
 
-import net.brickhouse.ordersofmagnitude.world.inventory.MatterWeaponMenu;
+import net.brickhouse.ordersofmagnitude.client.MatterWeaponMenu;
 import net.brickhouse.ordersofmagnitude.sizechange.SizeChangeCapability;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -16,7 +16,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.items.CapabilityItemHandler;

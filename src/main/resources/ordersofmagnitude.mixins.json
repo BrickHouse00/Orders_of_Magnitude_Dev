@@ -18,13 +18,13 @@
   ],
   "client": [
     "MixinCamera",
-    "client.MixinCubeMap",
-    "client.MixinEntityRendererDispatcher",
-    "client.MixinGameRenderer",
-    "client.MixinInventoryScreen",
-    "client.MixinScreenEffectRenderer",
-    "client.MixinPlayerRenderer",
-    "client.MixinEntityRenderer"
+    "MixinCubeMap",
+    "MixinEntityRendererDispatcher",
+    "MixinGameRenderer",
+    "MixinInventoryScreen",
+    "MixinScreenEffectRenderer",
+    "MixinPlayerRenderer",
+    "MixinEntityRenderer"
   ],
   "minVersion": "0.8"
 }

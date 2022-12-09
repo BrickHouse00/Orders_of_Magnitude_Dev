@@ -3,7 +3,7 @@ package net.brickhouse.ordersofmagnitude.client.gui;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.brickhouse.ordersofmagnitude.OrdersOfMagnitude;
-import net.brickhouse.ordersofmagnitude.world.inventory.MatterReallocatorTabletMenu;
+import net.brickhouse.ordersofmagnitude.client.MatterReallocatorTabletMenu;
 import net.brickhouse.ordersofmagnitude.client.gui.elements.TabletButton;
 import net.brickhouse.ordersofmagnitude.item.custom.MatterReallocatorTabletItem;
 import net.brickhouse.ordersofmagnitude.networking.ModMessages;
