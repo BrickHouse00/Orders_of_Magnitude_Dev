@@ -4,7 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.brickhouse.ordersofmagnitude.advancements.ModCriteriaTriggers;
 import net.brickhouse.ordersofmagnitude.block.ModBlocks;
 import net.brickhouse.ordersofmagnitude.block.blockEntity.ModBlockEntities;
-import net.brickhouse.ordersofmagnitude.client.ModMenuTypes;
+import net.brickhouse.ordersofmagnitude.world.inventory.ModMenuTypes;
 import net.brickhouse.ordersofmagnitude.config.OMServerConfig;
 import net.brickhouse.ordersofmagnitude.events.RenderEvents;
 import net.brickhouse.ordersofmagnitude.fluid.ModFluids;

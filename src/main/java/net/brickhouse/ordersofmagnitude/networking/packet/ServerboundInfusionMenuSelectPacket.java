@@ -1,7 +1,7 @@
 package net.brickhouse.ordersofmagnitude.networking.packet;
 
 import net.brickhouse.ordersofmagnitude.block.blockEntity.matterinfusion.AbstractMatterInfusionBlockEntity;
-import net.brickhouse.ordersofmagnitude.client.MatterInfusionMenu;
+import net.brickhouse.ordersofmagnitude.world.inventory.MatterInfusionMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;

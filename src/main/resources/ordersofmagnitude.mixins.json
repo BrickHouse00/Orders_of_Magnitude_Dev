@@ -4,27 +4,27 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "ordersofmagnitude.refmap.json",
   "mixins": [
-    "vehicle.MixinAbstractHorse",
     "MixinEntity",
     "MixinLivingEntity",
+    "MixinIForgePlayerMixin",
+    "MixinServerGamePacketListernerImpl",
     "block.MixinBasePressurePlateBlock",
     "block.MixinSnowLayerBlock",
     "block.MixinSoulSandBlock",
-    "MixinIForgePlayerMixin",
-    "MixinServerGamePacketListernerImpl",
-    "vehicle.MixinEntity",
     "vehicle.MixinBoat",
-    "vehicle.MixinLlama"
+    "vehicle.MixinEntity",
+    "vehicle.MixinLlama",
+    "vehicle.MixinAbstractHorse"
   ],
   "client": [
-    "MixinCamera",
-    "MixinCubeMap",
-    "MixinEntityRendererDispatcher",
-    "MixinGameRenderer",
-    "MixinInventoryScreen",
-    "MixinScreenEffectRenderer",
-    "MixinPlayerRenderer",
-    "MixinEntityRenderer"
+    "client.MixinCamera",
+    "client.MixinCubeMap",
+    "client.MixinEntityRenderer",
+    "client.MixinEntityRendererDispatcher",
+    "client.MixinGameRenderer",
+    "client.MixinInventoryScreen",
+    "client.MixinPlayerRenderer",
+    "client.MixinScreenEffectRenderer"
   ],
   "minVersion": "0.8"
 }

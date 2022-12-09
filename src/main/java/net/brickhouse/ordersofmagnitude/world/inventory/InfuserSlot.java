@@ -1,4 +1,4 @@
-package net.brickhouse.ordersofmagnitude.client.gui.elements;
+package net.brickhouse.ordersofmagnitude.world.inventory;
 
 import net.brickhouse.ordersofmagnitude.item.custom.EmptyModuleItem;
 import net.brickhouse.ordersofmagnitude.item.custom.InfusedModuleItem;

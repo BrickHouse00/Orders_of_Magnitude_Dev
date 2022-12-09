@@ -1,7 +1,7 @@
 package net.brickhouse.ordersofmagnitude.block.blockEntity;
 
 import net.brickhouse.ordersofmagnitude.block.ModBlocks;
-import net.brickhouse.ordersofmagnitude.client.MatterMixerMenu;
+import net.brickhouse.ordersofmagnitude.world.inventory.MatterMixerMenu;
 import net.brickhouse.ordersofmagnitude.config.OMServerConfig;
 import net.brickhouse.ordersofmagnitude.fluid.ModFluids;
 import net.minecraft.core.BlockPos;

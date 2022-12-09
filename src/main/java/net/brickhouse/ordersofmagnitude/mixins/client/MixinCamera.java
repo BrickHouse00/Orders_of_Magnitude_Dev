@@ -1,7 +1,7 @@
 //Credit for this function goes to gigabit101 for his work on Shrink.  This class was utilized while I work out a way to handle AABB issues through a Forge implementation
 
 //isPoseClear fires constantly.  There must be a better way to handle the needs of this function and reduce computational load.  Setting the AABB is doable with the right logic, but this function does help with overhead collision.  Maybe using the deflate command when recalcing the BB
-package net.brickhouse.ordersofmagnitude.mixins;
+package net.brickhouse.ordersofmagnitude.mixins.client;
 
 import net.brickhouse.ordersofmagnitude.sizechange.SizeUtility;
 import net.minecraft.client.Camera;
