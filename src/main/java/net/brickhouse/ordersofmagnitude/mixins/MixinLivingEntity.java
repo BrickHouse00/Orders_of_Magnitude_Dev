@@ -43,7 +43,7 @@ public abstract class MixinLivingEntity {
 
     //Let entities grab a vertical surface and climb when small.  This will give mobility to smalls to replace the loss of mobility from scaling jumping
     @Inject(method="onClimbable", at = @At("RETURN"), cancellable = true)
-    public void onSmallClimable(CallbackInfoReturnable<Boolean> cir){
+    public void onSmallClimbable(CallbackInfoReturnable<Boolean> cir){
         double scaleMod = SizeUtility.getScale((Entity)(Object)this);
         if(!this.isFallFlying() && scaleMod < 1.0 && !this.jumping && !(((Entity)(Object)this).getDeltaMovement().y <=0.0D)){
             cir.setReturnValue(true);
